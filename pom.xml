@@ -6,10 +6,13 @@
     <artifactId>bokstavligen</artifactId>
     <version>0.1.0-SNAPSHOT</version>
 
+    <!-- Define custom variables here -->
     <properties>
-        <!-- Define custom variables here -->
-        <kotlin.version>1.3.72</kotlin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- For Kotlin -->
+        <kotlin.version>1.3.72</kotlin.version>
+        <jvmTarget>11</jvmTarget>
+        <!-- ********** -->
     </properties>
 
     <dependencies>
@@ -21,7 +24,13 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <!-- Kotlin Standard Library for JDK8 -->
+            <!-- JavaFX for Java 11 -->
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>11.0.2</version>
+        </dependency>
+        <dependency>
+            <!-- Kotlin Standard Library supporting JDK8 -->
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib-jdk8</artifactId>
             <version>${kotlin.version}</version>
