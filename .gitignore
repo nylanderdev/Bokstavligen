@@ -1,0 +1,9 @@
+# IntelliJ
+.idea/
+*.iml
+
+# Compiled bytecode
+target/
+
+# IntelliJ Kotlin stdlib outside of maven
+lib/
