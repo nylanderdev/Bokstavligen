@@ -6,7 +6,7 @@ import javafx.stage.Stage
 class Main : Application() {
 
     companion object {
-        private val PLAIN_TEXT_EDITOR: String = "PlainTextEditor"
+        private const val PLAIN_TEXT_EDITOR: String = "PlainTextEditor"
 
         private fun loadFxml(name: String): Scene {
             return Scene(FXMLLoader.load(javaClass.getResource("fxml/$name.fxml")))
