@@ -1,3 +1,5 @@
+package extension
+
 import javafx.scene.control.TextArea
 
 fun TextArea.caretRowAndColumn(): Pair<Int, Int> {

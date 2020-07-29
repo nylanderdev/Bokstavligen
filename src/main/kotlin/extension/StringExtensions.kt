@@ -1,3 +1,5 @@
+package extension
+
 fun String.wordCount(): Int {
     // todo (unknown priority): optimize (regex is overkill)
     val wordRegex = Regex("\\S+")

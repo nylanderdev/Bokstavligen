@@ -1,10 +1,10 @@
 package controller
 
-import caretRowAndColumn
+import extension.caretRowAndColumn
 import javafx.fxml.FXML
 import javafx.scene.control.Label
 import javafx.scene.control.TextArea
-import wordCount
+import extension.wordCount
 
 class PlainTextEditorController {
     companion object {
