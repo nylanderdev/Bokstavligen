@@ -1,6 +1,6 @@
 package controller
 
-import TextAreaUtil
+import caretRowAndColumn
 import javafx.fxml.FXML
 import javafx.scene.control.Label
 import javafx.scene.control.TextArea
@@ -37,7 +37,7 @@ class PlainTextEditorController {
 
 
     private fun onCaretMove() {
-        val (row, column) = TextAreaUtil.findCaretRowAndColumn(textArea)
+        val (row, column) = textArea.caretRowAndColumn()
         coordLabel.text = createCoordString(row, column)
     }
 }
