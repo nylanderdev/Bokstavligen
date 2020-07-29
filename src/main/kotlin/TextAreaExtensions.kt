@@ -10,4 +10,5 @@ fun TextArea.caretRowAndColumn(): Pair<Int, Int> {
     return Pair(row, column)
 }
 
-private fun countNewLines(string: String): Int = string.length - string.replace("\n", "").length
+private fun countNewLines(string: String): Int =
+        string.length - string.replace("\n", "").length
