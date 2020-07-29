@@ -6,11 +6,11 @@ object TextAreaUtil {
         val textBeforeCaret = textArea.text.substring(0, textArea.caretPosition)
         val caretLineStartIndex = textBeforeCaret.lastIndexOf("\n") + 1
         val caretLineBeforeCaret = textBeforeCaret.substring(caretLineStartIndex)
-        val row = countSubstringFrequency(textBeforeCaret, "\n")
+        val row = countNewLines(textBeforeCaret)
         val column = caretLineBeforeCaret.length
         return Pair(row, column)
     }
 
-    private fun countSubstringFrequency(string: String, substring: String): Int
-            = string.length - string.replace(substring, "").length
+    private fun countNewLines(string: String): Int
+            = string.length - string.replace("\n", "").length
 }
