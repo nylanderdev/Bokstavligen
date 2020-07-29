@@ -8,5 +8,6 @@
    <children>
       <TextArea fx:id="textArea" layoutX="14.0" layoutY="33.0" prefHeight="339.0" prefWidth="572.0" wrapText="true" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0" />
       <Label fx:id="coordLabel" layoutX="14.0" layoutY="377.0" text="(Row; Col) : (0; 0)" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="14.0" />
+      <Label fx:id="wordCountLabel" layoutX="538.0" layoutY="377.0" text="Words : 0" textAlignment="RIGHT" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="14.0" />
    </children>
 </AnchorPane>
