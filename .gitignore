@@ -7,3 +7,6 @@ target/
 
 # IntelliJ Kotlin stdlib outside of maven
 lib/
+
+# Maven Shade
+dependency-reduced-pom.xml
