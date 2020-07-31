@@ -1,7 +1,12 @@
 import javafx.application.Application
 import javafx.fxml.FXMLLoader
 import javafx.scene.Scene
+import javafx.scene.control.Button
+import javafx.scene.layout.AnchorPane
+import javafx.scene.layout.HBox
+import javafx.scene.layout.Pane
 import javafx.stage.Stage
+import ui.TextRenderer
 
 class Bokstavligen : Application() {
     companion object {
@@ -20,7 +25,8 @@ class Bokstavligen : Application() {
         primary.title = "Bokstavligen"
         primary.width = 600.0
         primary.height = 400.0
-        primary.scene = loadFxml(PLAIN_TEXT_EDITOR)
+        val renderer = TextRenderer()
+        primary.scene = Scene(renderer)//loadFxml(PLAIN_TEXT_EDITOR)
         primary.show()
     }
 }
