@@ -1,6 +1,7 @@
 package controller
 
 import extension.caretRowAndColumn
+import extension.caretWordIndex
 import javafx.fxml.FXML
 import javafx.scene.control.Label
 import javafx.scene.control.TextArea
@@ -10,7 +11,7 @@ class PlainTextEditorController {
     companion object {
         private fun createCoordString(row: Int, column: Int): String = "(Row; Col) : ($row; $column)"
 
-        private fun createWordCountString(wordCount: Int): String = "Words : $wordCount"
+        private fun createWordCountString(wordIndex: Int, wordCount: Int): String = "Words : $wordIndex / $wordCount"
     }
 
     @FXML
@@ -24,20 +25,31 @@ class PlainTextEditorController {
 
     @FXML
     fun initialize() {
-        textArea.caretPositionProperty()
-                .addListener { _, _, _ -> onCaretMove() }
         textArea.textProperty()
                 .addListener { _, _, _ -> onTextChange() }
+        textArea.caretPositionProperty()
+                .addListener { _, _, _ -> onCaretMove() }
+
     }
 
+    private var wordCount = 0
+    private var wordIndex = 0
+
     private fun onTextChange() {
-        val wordCount = textArea.text.wordCount()
-        wordCountLabel.text = createWordCountString(wordCount)
+        wordIndex = textArea.caretWordIndex()
+        wordCount = textArea.text.wordCount()
+        invalidateWordIndexAndCount()
     }
 
 
     private fun onCaretMove() {
         val (row, column) = textArea.caretRowAndColumn()
         coordLabel.text = createCoordString(row, column)
+        wordIndex = textArea.caretWordIndex()
+        invalidateWordIndexAndCount()
+    }
+
+    private fun invalidateWordIndexAndCount() {
+        wordCountLabel.text = createWordCountString(wordIndex, wordCount)
     }
 }
