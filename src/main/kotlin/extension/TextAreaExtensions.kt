@@ -2,6 +2,11 @@ package extension
 
 import javafx.scene.control.TextArea
 
+/**
+ * Finds the null-indexed row and column on which the caret is currently located
+ *
+ * @return The current row and column of the caret
+ */
 fun TextArea.caretRowAndColumn(): Pair<Int, Int> {
     // todo (low priority): O(n), optimize if necessary and possible
     val textBeforeCaret = this.textBeforeCaret()
@@ -12,6 +17,11 @@ fun TextArea.caretRowAndColumn(): Pair<Int, Int> {
     return Pair(row, column)
 }
 
+/**
+ * Counts the number of words (whitespace-separated substrings) preceding the caret
+ *
+ * @return The number of words before preceding the caret
+ */
 fun TextArea.caretWordIndex(): Int {
     val textBeforeCaret = this.textBeforeCaret()
     return textBeforeCaret.wordCount()

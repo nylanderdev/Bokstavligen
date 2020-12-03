@@ -23,6 +23,9 @@ class PlainTextEditorController {
     @FXML
     private lateinit var wordCountLabel: Label
 
+    /**
+     * The initialization method to be called by JavaFX. Instance will break if used prior to initialization.
+     */
     @FXML
     fun initialize() {
         textArea.textProperty()
