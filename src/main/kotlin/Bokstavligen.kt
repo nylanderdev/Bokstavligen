@@ -3,6 +3,9 @@ import javafx.fxml.FXMLLoader
 import javafx.scene.Scene
 import javafx.stage.Stage
 
+/**
+ * The JavaFX application behind Bokstavligen
+ */
 class Bokstavligen : Application() {
     companion object {
         private const val PLAIN_TEXT_EDITOR = "PlainTextEditor"
@@ -12,6 +15,11 @@ class Bokstavligen : Application() {
         }
     }
 
+    /**
+     * Starts this instance of Bokstavligen
+     *
+     * @param args Command-line arguments to forward to the app
+     */
     fun launchApp(args: Array<String>) {
         launch(*args)
     }
